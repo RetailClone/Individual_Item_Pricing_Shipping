@@ -1,0 +1,23 @@
+{
+  "name": "individual_item_pricing_shipping",
+  "version": "1.0.0",
+  "description": "This component displays images of the product, the price, and the shipping infomation",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RetailClone/Individual_Item_Pricing_Shipping.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RetailClone/Individual_Item_Pricing_Shipping/issues"
+  },
+  "homepage": "https://github.com/RetailClone/Individual_Item_Pricing_Shipping#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
