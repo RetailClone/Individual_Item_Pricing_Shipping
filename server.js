@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const db = require('./database/queries.js');
 const PORT = 7770;
 
 const app = express();
