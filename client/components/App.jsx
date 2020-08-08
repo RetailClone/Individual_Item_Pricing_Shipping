@@ -1,4 +1,7 @@
 const React = require('react');
+import Image from './Image.jsx';
+import Price from './Price.jsx';
+import Shipping from './Shipping.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -8,7 +11,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1>Working on Component</h1>
+      <div>
+        <h1>Working on Component</h1>
+        <Image/>
+        <Price/>
+        <Shipping/>
+      </div>
     )
   }
 }
