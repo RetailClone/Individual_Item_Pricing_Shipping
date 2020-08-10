@@ -6,6 +6,10 @@ module.exports = {
   entry: {
     main:APP_DIR + '/index.js'
   },
+  watchOptions: {
+    poll:true,
+    ignored: /node_modules/
+  },
   output: {
     filename: 'bundle.js',
     path: BUILD_DIR
