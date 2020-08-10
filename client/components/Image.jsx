@@ -1,11 +1,12 @@
 const React = require('react');
 import Axios from 'axios';
+import PhotosList from './PhotosList.jsx';
 
 class Image extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: 1,
+      productId: 22,
       photosList: [{link: "https://via.placeholder.com/300"}]
     };
     this.getPhotos = this.getPhotos.bind(this);
@@ -34,6 +35,7 @@ class Image extends React.Component {
         <div>This is the Image Component</div>
         <div>Name of Item goes here</div>
         <div>List of images</div>
+        <div><PhotosList photos={this.state.photosList}/></div>
         <div>Main Image goes here</div>
 
       </div>
