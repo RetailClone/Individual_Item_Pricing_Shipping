@@ -15,6 +15,18 @@ const testDbConnect = (callback) => {
   })
 }
 
+const getName = (id, callback) => {
+  connection.query(`SELECT name FROM products WHERE id = ${id}`, (err, results, fields) => {
+    if (err) {
+      console.log("Query error in getting name", err);
+      callback(err, null);
+    } else {
+      console.log("Success query for name");
+      callback(null, results);
+    }
+  });
+};
+
 const getPrice = (id, callback) => {
   connection.query(`SELECT price FROM products WHERE id = ${id}`, (err, results, fields) => {
     if (err) {
@@ -39,4 +51,4 @@ const getPhotos = (id, callback) => {
   });
 };
 
-module.exports = { testDbConnect, getPrice, getPhotos };
+module.exports = { testDbConnect, getName, getPrice, getPhotos };

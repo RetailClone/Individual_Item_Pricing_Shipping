@@ -39,6 +39,24 @@ app.get("/product/price/:Id", (req, res) => {
   })
 });
 
+//This route will get Name of product
+app.get("/product/name/:Id", (req, res) => {
+  let productIdNum = parseInt(req.params.Id);
+  db.getName(productIdNum, (err, results)=>{
+    if (err) {
+      console.log("Error in name route")
+      res.sendStatus(400);
+    } else {
+      if (results.length === 0) {
+        console.log('item not in database')
+        res.send( {"name": "Non-existent item"} )
+      }
+      console.log("Successful price query")
+      res.status(200).send(results[0]);
+    }
+  })
+});
+
 //This route will get photos of product
 app.get("/product/photos/:product", (req, res) => {
   let productIdNum = parseInt(req.params.product);
