@@ -1,9 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const db = require('./database/queries.js');
 const PORT = 7770;
 
 const app = express();
+app.use(cors())
+
 
 app.use(express.static(__dirname + '/public'));
 
@@ -19,8 +22,8 @@ app.get("/testBackendConnection", (req, res) => {
 })
 
 //This route will get price of product
-app.get("/product/price/:price", (req, res) => {
-  let productIdNum = parseInt(req.params.price);
+app.get("/product/price/:Id", (req, res) => {
+  let productIdNum = parseInt(req.params.Id);
   db.getPrice(productIdNum, (err, results)=>{
     if (err) {
       console.log("Error in price route")

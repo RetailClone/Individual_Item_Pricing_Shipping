@@ -11,7 +11,17 @@ class Price extends React.Component {
   }
 
   getPrice(prodId) {
-    //axios request
+    // Axios.get('https://localhost:7770/product/price', {
+    //   params: {
+    //     Id: prodId
+    //   }
+    // })
+    // .then(function (response) {
+    //   console.log(response);
+    // })
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
     return prodId;
   }
 
