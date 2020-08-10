@@ -5,7 +5,13 @@ const PhotosList = (props) => {
   return (
     <div>
        {props.photos.map((photoObj) => {
-         return <SinglePhoto key={photoObj.id} photo={photoObj}/>
+         return (
+          <SinglePhoto
+            key={photoObj.id}
+            photo={photoObj}
+            clickHandler={props.clickHandler}
+          />
+         );
        })}
     </div>
   )

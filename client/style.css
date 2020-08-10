@@ -11,12 +11,18 @@ h1 {
 
 #image-module {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+}
+
+#product-name {
+  display: flex;
+  align-items: flex-start;
 }
 
 #photo-list {
   display: flex;
   justify-content: flex-start;
+  align-items: flex-end;
   flex-direction: column-reverse;
   background-color: royalblue;
 }
