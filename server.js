@@ -5,7 +5,7 @@ const db = require('./database/queries.js');
 const PORT = 7770;
 
 const app = express();
-app.use(cors())
+app.use(cors());
 
 
 app.use(express.static(__dirname + '/public'));

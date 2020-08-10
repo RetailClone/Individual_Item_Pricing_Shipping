@@ -5,7 +5,7 @@ class Price extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId : 1,
+      productId : this.props.itemId || 1,
       price: 0
     };
     this.getPrice = this.getPrice.bind(this);
@@ -30,7 +30,7 @@ class Price extends React.Component {
     return (
       <div>
         <div>This is the Price Component</div>
-        {/* {this.getPrice(this.state.productId)} */}
+        <div>{`$${this.state.price}`}</div>
       </div>
     )
   }

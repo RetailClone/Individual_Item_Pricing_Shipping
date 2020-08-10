@@ -6,7 +6,9 @@ import Shipping from './Shipping.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      productId: 7
+    };
   }
 
   render() {
@@ -14,7 +16,7 @@ class App extends React.Component {
       <div>
         <h1>Working on Component</h1>
         <Image/>
-        <Price/>
+        <Price itemId={this.state.productId}/>
         <Shipping/>
       </div>
     )
