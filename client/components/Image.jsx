@@ -11,10 +11,11 @@ class Image extends React.Component {
       productId: this.props.itemId || 22,
       name: 'Product Name',
       photosList: [{id: 9999,link: "https://via.placeholder.com/300"}],
-      mainImage: {id: 9999,link: "https://via.placeholder.com/300"}
+      mainImage: null
     };
     this.getName = this.getName.bind(this);
     this.getPhotos = this.getPhotos.bind(this);
+    this.imageClickHandler = this.imageClickHandler.bind(this);
   }
 
   componentDidMount() {
@@ -37,7 +38,7 @@ class Image extends React.Component {
   getPhotos(prodId) {
     Axios.get(`http://localhost:7770/product/photos/${prodId}`)
       .then ( (response) => {
-        this.setState({mainImage: response.data[0]})
+        this.setState({mainImage: response.data[0].link})
         //defaults mainImage to first photo
         this.setState({photosList: response.data});
       })
@@ -46,16 +47,19 @@ class Image extends React.Component {
       })
   }
 
+  imageClickHandler(event) {
+    this.setState({mainImage: event});
+  }
+
   render() {
     return (
-      <div>
-        <div>This is the Image Component</div>
-        <div><ProductName product={this.state.name}/></div>
-        <div>List of images</div>
-        <div><PhotosList photos={this.state.photosList}/></div>
-        <div>Main Image goes here</div>
-        <MainImage mainImage={this.state.mainImage}/>
-
+      <div id="image-module">
+        <ProductName product={this.state.name} />
+        <PhotosList
+          photos={this.state.photosList}
+          clickHandler={this.imageClickHandler}
+        />
+        <MainImage mainImage={this.state.mainImage} />
       </div>
     )
   }
