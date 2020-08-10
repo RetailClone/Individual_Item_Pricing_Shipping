@@ -14,7 +14,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Working on Component</h1>
+        <h1>INDIVIDUAL Product Component</h1>
         <Image itemId={this.state.productId}/>
         <Price itemId={this.state.productId}/>
         <Shipping/>

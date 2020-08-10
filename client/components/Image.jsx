@@ -9,15 +9,28 @@ class Image extends React.Component {
     super(props);
     this.state = {
       productId: this.props.itemId || 22,
+      name: 'Product Name',
       photosList: [{id: 9999,link: "https://via.placeholder.com/300"}],
       mainImage: {id: 9999,link: "https://via.placeholder.com/300"}
     };
+    this.getName = this.getName.bind(this);
     this.getPhotos = this.getPhotos.bind(this);
   }
 
   componentDidMount() {
     this.getPhotos(this.state.productId);
+    this.getName(this.state.productId);
+  }
 
+  //sends request to retrieve name of product
+  getName(prodId) {
+    Axios.get(`http://localhost:7770/product/name/${prodId}`)
+      .then ( (response) => {
+      this.setState({name: response.data.name});
+      })
+      .catch( (error) => {
+        console.log(error);
+      })
   }
 
   //sends request to retrieve photos of product
@@ -37,7 +50,7 @@ class Image extends React.Component {
     return (
       <div>
         <div>This is the Image Component</div>
-        <div><ProductName product={this.props.itemId}/></div>
+        <div><ProductName product={this.state.name}/></div>
         <div>List of images</div>
         <div><PhotosList photos={this.state.photosList}/></div>
         <div>Main Image goes here</div>
