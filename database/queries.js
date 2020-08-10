@@ -28,7 +28,7 @@ const getPrice = (id, callback) => {
 };
 
 const getPhotos = (id, callback) => {
-  connection.query(`SELECT link FROM photos WHERE product = ${id}`, (err, results, fields) => {
+  connection.query(`SELECT id,link FROM photos WHERE product = ${id}`, (err, results, fields) => {
     if (err) {
       console.log("Query error in getting photos", err);
       callback(err, null);

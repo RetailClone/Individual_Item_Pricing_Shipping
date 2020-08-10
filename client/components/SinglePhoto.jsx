@@ -2,9 +2,7 @@ const React = require('react');
 
 const SinglePhoto = (props) => {
   return (
-    <div>
-      <img src={props.photo.link}/>
-      </div>
+      <img key={props.photo.id} src={props.photo.link}/>
   )
 }
 
