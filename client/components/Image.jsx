@@ -2,6 +2,7 @@ const React = require('react');
 import Axios from 'axios';
 import PhotosList from './PhotosList.jsx';
 import MainImage from './MainImage.jsx';
+import ProductName from './ProductName.jsx';
 
 class Image extends React.Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class Image extends React.Component {
     return (
       <div>
         <div>This is the Image Component</div>
-        <div>Name of Item goes here</div>
+        <div><ProductName product={this.props.itemId}/></div>
         <div>List of images</div>
         <div><PhotosList photos={this.state.photosList}/></div>
         <div>Main Image goes here</div>
