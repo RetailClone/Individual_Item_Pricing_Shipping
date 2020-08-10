@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: 7
+      productId: 24
     };
   }
 
@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Working on Component</h1>
-        <Image/>
+        <Image itemId={this.state.productId}/>
         <Price itemId={this.state.productId}/>
         <Shipping/>
       </div>

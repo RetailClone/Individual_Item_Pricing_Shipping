@@ -7,7 +7,7 @@ class Image extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: 22,
+      productId: this.props.itemId || 22,
       photosList: [{id: 9999,link: "https://via.placeholder.com/300"}],
       mainImage: {id: 9999,link: "https://via.placeholder.com/300"}
     };
@@ -19,13 +19,13 @@ class Image extends React.Component {
 
   }
 
+  //sends request to retrieve photos of product
   getPhotos(prodId) {
     Axios.get(`http://localhost:7770/product/photos/${prodId}`)
       .then ( (response) => {
-      this.setState({photosList: response.data});
-      this.setState({mainImage: response.data[0]})
-      // console.log("Array of photo links", this.state.photosList);
-      console.log("mainImage", this.state)
+        this.setState({mainImage: response.data[0]})
+        //defaults mainImage to first photo
+        this.setState({photosList: response.data});
       })
       .catch( (error) => {
         console.log(error);

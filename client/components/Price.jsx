@@ -5,7 +5,7 @@ class Price extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId : this.props.itemId || 1,
+      productId : this.props.itemId || 22,
       price: 0
     };
     this.getPrice = this.getPrice.bind(this);
@@ -19,7 +19,6 @@ class Price extends React.Component {
     Axios.get(`http://localhost:7770/product/price/${prodId}`)
       .then ( (response) => {
       this.setState({price: response.data.price});
-      console.log("price of item", this.state.price);
       })
       .catch( (error) => {
         console.log(error);
