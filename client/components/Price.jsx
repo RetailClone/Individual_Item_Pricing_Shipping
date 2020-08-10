@@ -27,7 +27,7 @@ class Price extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="price-module">
         <div>This is the Price Component</div>
         <div>{`$${this.state.price}`}</div>
       </div>

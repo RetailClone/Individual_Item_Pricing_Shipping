@@ -13,8 +13,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>INDIVIDUAL Product Component</h1>
+      <div id="main-preview">
         <Image itemId={this.state.productId}/>
         <Price itemId={this.state.productId}/>
         <Shipping/>

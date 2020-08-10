@@ -2,3 +2,21 @@ h1 {
   color: red;
   margin-left: 20px;
 }
+
+/* this is in App */
+#main-preview {
+  display: flex;
+  justify-content: center;
+}
+
+#image-module {
+  display: flex;
+  justify-content: center;
+}
+
+#photo-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column-reverse;
+  background-color: royalblue;
+}

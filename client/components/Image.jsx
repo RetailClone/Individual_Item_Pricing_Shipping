@@ -48,11 +48,11 @@ class Image extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="image-module">
         <div>This is the Image Component</div>
         <div><ProductName product={this.state.name}/></div>
         <div>List of images</div>
-        <div><PhotosList photos={this.state.photosList}/></div>
+        <div id="photo-list"><PhotosList photos={this.state.photosList}/></div>
         <div>Main Image goes here</div>
         <MainImage mainImage={this.state.mainImage}/>
 
