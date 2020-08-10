@@ -6,15 +6,17 @@ import Shipping from './Shipping.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      productId: 24
+    };
   }
 
   render() {
     return (
       <div>
-        <h1>Working on Component</h1>
-        <Image/>
-        <Price/>
+        <h1>INDIVIDUAL Product Component</h1>
+        <Image itemId={this.state.productId}/>
+        <Price itemId={this.state.productId}/>
         <Shipping/>
       </div>
     )
