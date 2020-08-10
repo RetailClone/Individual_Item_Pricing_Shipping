@@ -2,6 +2,7 @@ const React = require('react');
 import Image from './Image.jsx';
 import Price from './Price.jsx';
 import Shipping from './Shipping.jsx';
+import './style.css'
 
 class App extends React.Component {
   constructor(props) {
