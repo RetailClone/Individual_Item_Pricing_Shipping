@@ -38,7 +38,7 @@ class Image extends React.Component {
 
   render() {
     return (
-      <div className="image-component">
+      <div className="images-container">
         <PhotosList className="photo-list"
           photos={this.state.photosList}
           clickHandler={this.imageClickHandler}

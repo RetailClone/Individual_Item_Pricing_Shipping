@@ -31,11 +31,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="main-preview">
+      <div className="individual-items-main-view">
         <div className="product-name">
           {this.state.name}
         </div>
-        <div className="content">
+        <div className="individual-items-content">
           <Image itemId={this.state.productId}/>
           <Price itemId={this.state.productId}/>
           <Shipping/>
