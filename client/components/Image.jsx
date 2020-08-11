@@ -23,8 +23,8 @@ class Image extends React.Component {
   getPhotos(prodId) {
     Axios.get(`http://localhost:7770/product/photos/${prodId}`)
       .then ( (response) => {
-        this.setState({mainImage: response.data[0].link})
         //defaults mainImage to first photo
+        this.setState({mainImage: response.data[0].link})
         this.setState({photosList: response.data});
       })
       .catch( (error) => {

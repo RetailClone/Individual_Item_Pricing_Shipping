@@ -4,39 +4,121 @@
   width: 100%;
 }
 
-.images-container {
-  /* justify-content: center; */
-  width: 50%;
-  display: flex;
-}
-
 .product-name {
   width: 100%;
+  font-size: 1.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  white-space: normal;
+  color: rgb(51, 51, 51);
+  padding: 20px
 }
 
 .individual-items-content {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
+/* this is in Image */
+.images-container {
+  width: 50%;
+  display: flex;
+}
 
 .photo-list {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  padding: 2%;
 }
 
 .single-photo {
   display:flex;
-  background-color: red;
+  background-color: black;
   width:60%;
   height: auto;
-  border-style: dotted;
+  border-style: solid;
+  margin: 2%;
 }
 
 .main-image {
   display:flex;
-  border-style: dotted;
-  background-color: red;
+  border-style: solid;
+  background-color: black;
 }
+
+/* this is in Price */
+.price-number {
+  font-size: 2vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  white-space: normal;
+  color: rgb(51, 51, 51);
+}
+.quantity-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.quantity-dropbtn {
+  background-color: white;
+  color:  rgb(51, 51, 51);
+  padding: 16px;
+  font-size: 16px;
+}
+
+.quantity-dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.quantity-dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.quantity-dropdown-content a:hover {background-color: #f1f1f1; text-decoration: underline}
+.quantity-dropdown:hover .quantity-dropdown-content {display: block;}
+.quantity-dropdown:hover .quantity-dropbtn {background-color: rgb(247, 247, 247);}
+
+/* this is in Shipping */
+.shipping-contents {
+  width: 25%;
+  background-color: rgb(247, 247, 247);
+  padding-top: 4%;
+  padding-right: 2%;
+  padding-bottom: 4%;
+  padding-left: 2%;;
+}
+
+.shipping-headers {
+  display:flex;
+  align-content: space-between;
+}
+.shipping-green-text {
+  padding:10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: green;
+}
+
+.shipping-button {
+  width: 40%;
+  height: 50%;
+  padding:3%;
+  border-radius: 5px;
+  background-color: #CA0813;
+  color: white;
+}
+.shipping-button:hover {background-color: rgb(143, 42, 33)}
+.shipping-button:active {background-color: rgb(105, 29, 22)}

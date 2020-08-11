@@ -27,9 +27,22 @@ class Price extends React.Component {
 
   render() {
     return (
-      <div id="price-module">
-        <div>This is the Price Component</div>
-        <div>{`$${this.state.price}`}</div>
+      <div>
+        <div className="price-number">{`$${this.state.price.toFixed(2)}`}</div>
+        <div className="quantity-dropdown">
+          <button className="quantity-dropbtn">Quantity</button>
+          <div className="quantity-dropdown-content">
+            <a>1</a>
+            <a>2</a>
+            <a>3</a>
+            <a>4</a>
+            <a>5</a>
+            <a>6</a>
+            <a>7</a>
+            <a>8</a>
+            <a>9</a>
+          </div>
+        </div>
       </div>
     )
   }
