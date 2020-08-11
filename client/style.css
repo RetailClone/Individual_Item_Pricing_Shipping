@@ -1,28 +1,42 @@
-h1 {
-  color: red;
-  margin-left: 20px;
-}
 
 /* this is in App */
-#main-preview {
+.individual-items-main-view {
+  width: 100%;
+}
+
+.images-container {
+  /* justify-content: center; */
+  width: 50%;
+  display: flex;
+}
+
+.product-name {
+  width: 100%;
+}
+
+.individual-items-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.photo-list {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
-#image-module {
-  display: flex;
-  /* justify-content: center; */
+.single-photo {
+  display:flex;
+  background-color: red;
+  width:60%;
+  height: auto;
+  border-style: dotted;
 }
 
-#product-name {
-  display: flex;
-  align-items: flex-start;
-}
-
-#photo-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  flex-direction: column-reverse;
-  background-color: royalblue;
+.main-image {
+  display:flex;
+  border-style: dotted;
+  background-color: red;
 }
