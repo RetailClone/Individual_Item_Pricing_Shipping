@@ -1,12 +1,12 @@
-const React = require('react');
-import Axios from 'axios';
+const React = require("react");
+import axios from "axios";
 
 class Price extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId : this.props.itemId || 22,
-      price: 0
+      productId: this.props.itemId || 22,
+      price: 0,
     };
     this.getPrice = this.getPrice.bind(this);
   }
@@ -16,13 +16,13 @@ class Price extends React.Component {
   }
 
   getPrice(prodId) {
-    Axios.get(`http://localhost:7770/product/price/${prodId}`)
-      .then ( (response) => {
-      this.setState({price: response.data.price});
+    axios.get(`http://localhost:7770/product/price/${prodId}`)
+      .then((response) => {
+        this.setState({ price: response.data.price });
       })
-      .catch( (error) => {
+      .catch((error) => {
         console.log(error);
-      })
+      });
   }
 
   render() {
@@ -32,19 +32,13 @@ class Price extends React.Component {
         <div className="quantity-dropdown">
           <button className="quantity-dropbtn">Quantity</button>
           <div className="quantity-dropdown-content">
-            <a>1</a>
-            <a>2</a>
-            <a>3</a>
-            <a>4</a>
-            <a>5</a>
-            <a>6</a>
-            <a>7</a>
-            <a>8</a>
-            <a>9</a>
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num, i) => {
+              return <a key={i}>{num}</a>;
+            })}
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
