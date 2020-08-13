@@ -1,10 +1,12 @@
 
 /* this is in App */
-.individual-items-main-view {
-  width: 100%;
+.individualItemsMainView {
+  width: 90%;
+  margin-left: 10%;
+  margin-right:10%;
 }
 
-.product-name {
+.productName {
   width: 100%;
   font-size: 1.5vw;
   font-family: Arial, Helvetica, sans-serif;
@@ -12,45 +14,51 @@
   font-style: normal;
   white-space: normal;
   color: rgb(51, 51, 51);
-  padding: 20px
+  padding: 20px;
 }
 
-.individual-items-content {
+.individualItemsContent {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
 /* this is in Image */
-.images-container {
-  width: 50%;
+.imagesContainer {
+  width: 60%;
   display: flex;
 }
 
-.photo-list {
+.photoList {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 2%;
 }
 
-.single-photo {
+.singlePhoto {
   display:flex;
-  background-color: black;
-  width:60%;
+  width: 6vw;
+  height: 6vw;
   height: auto;
   border-style: solid;
-  margin: 2%;
+  border-width: thin;
+  background-color: black;
+  margin-bottom: 1vw;
+  margin-right: 1vw;
 }
 
-.main-image {
+.mainImage {
   display:flex;
+  width: 35vw;
+  height: 35vw;
+  height: auto;
   border-style: solid;
+  border-width: thin;
   background-color: black;
 }
 
 /* this is in Price */
-.price-number {
+.priceNumber {
   font-size: 2vw;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -58,19 +66,19 @@
   white-space: normal;
   color: rgb(51, 51, 51);
 }
-.quantity-dropdown {
+.quantityDropdown {
   position: relative;
   display: inline-block;
 }
 
-.quantity-dropbtn {
+.quantityDropbtn {
   background-color: white;
   color:  rgb(51, 51, 51);
   padding: 16px;
   font-size: 16px;
 }
 
-.quantity-dropdown-content {
+.quantityDropdownContent {
   display: none;
   position: absolute;
   right: 0;
@@ -80,20 +88,21 @@
   z-index: 1;
 }
 
-.quantity-dropdown-content a {
+.quantityDropdownContent a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
-.quantity-dropdown-content a:hover {background-color: #f1f1f1; text-decoration: underline}
-.quantity-dropdown:hover .quantity-dropdown-content {display: block;}
-.quantity-dropdown:hover .quantity-dropbtn {background-color: rgb(247, 247, 247);}
+.quantityDropdownContent a:hover {background-color: #f1f1f1; text-decoration: underline}
+.quantityDropdown:hover .quantityDropdownContent {display: block;}
+.quantityDropdown:hover .quantityDropbtn {background-color: rgb(247, 247, 247);}
 
 /* this is in Shipping */
-.shipping-contents {
+.shippingContents {
   width: 25%;
+  height: 325px;
   background-color: rgb(247, 247, 247);
   padding-top: 4%;
   padding-right: 2%;
@@ -101,18 +110,18 @@
   padding-left: 2%;;
 }
 
-.shipping-headers {
+.shippingHeaders {
   display:flex;
   align-content: space-between;
 }
-.shipping-green-text {
+.shippingGreenText {
   padding:10px;
   font-size: 16px;
   font-weight: bold;
   color: green;
 }
 
-.shipping-button {
+.shippingButton {
   width: 40%;
   height: 50%;
   padding:3%;
@@ -120,5 +129,5 @@
   background-color: #CA0813;
   color: white;
 }
-.shipping-button:hover {background-color: rgb(143, 42, 33)}
-.shipping-button:active {background-color: rgb(105, 29, 22)}
+.shippingButton:hover {background-color: rgb(143, 42, 33)}
+.shippingButton:active {background-color: rgb(105, 29, 22)}

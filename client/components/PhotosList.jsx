@@ -1,4 +1,5 @@
-const React = require("react");
+import React from "react";
+import styles from "../style.css";
 
 const PhotosList = (props) => {
   return (
@@ -6,7 +7,7 @@ const PhotosList = (props) => {
       {props.photos.map((photoObj) => {
         return (
           <img
-            className="single-photo"
+            className={styles.singlePhoto}
             key={photoObj.id}
             src={photoObj.link}
             onClick={props.clickHandler.bind(null, photoObj.link)}

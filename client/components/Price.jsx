@@ -1,5 +1,6 @@
-const React = require("react");
+import React from "react";
 import axios from "axios";
+import styles from "../style.css";
 
 class Price extends React.Component {
   constructor(props) {
@@ -28,10 +29,10 @@ class Price extends React.Component {
   render() {
     return (
       <div>
-        <div className="price-number">{`$${this.state.price.toFixed(2)}`}</div>
-        <div className="quantity-dropdown">
-          <button className="quantity-dropbtn">Quantity</button>
-          <div className="quantity-dropdown-content">
+        <div className={styles.priceNumber}>{`$${this.state.price.toFixed(2)}`}</div>
+        <div className={styles.quantityDropdown}>
+          <button className={styles.quantityDropbtn}>Quantity</button>
+          <div className={styles.quantityDropdownContent}>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num, i) => {
               return <a key={i}>{num}</a>;
             })}
