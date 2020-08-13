@@ -9,7 +9,7 @@ class ItemView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: this.props.stuffId || 2,
+      productId: 2,
       name: 'Product Name',
     };
     this.getName = this.getName.bind(this);
@@ -17,8 +17,6 @@ class ItemView extends React.Component {
 
   componentDidMount() {
     this.getName(this.state.productId);
-    console.log("this is stuff id", this.props);
-    console.log("url",window.location.href)
   }
 
   //sends request to retrieve name of product
