@@ -3,12 +3,13 @@ import Image from './Image.jsx';
 import Price from './Price.jsx';
 import Shipping from './Shipping.jsx';
 import axios from 'axios';
+import styles from "../style.css";
 
-class App extends React.Component {
+class ItemView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: 40,
+      productId: this.props.stuffId || 2,
       name: 'Product Name',
     };
     this.getName = this.getName.bind(this);
@@ -16,6 +17,8 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getName(this.state.productId);
+    console.log("this is stuff id", this.props);
+    console.log("url",window.location.href)
   }
 
   //sends request to retrieve name of product
@@ -31,11 +34,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="individual-items-main-view">
-        <div className="product-name">
+      <div className={styles.individualItemsMainView}>
+        <div className={styles.productName}>
           {this.state.name}
         </div>
-        <div className="individual-items-content">
+        <div className={styles.individualItemsContent}>
           <Image itemId={this.state.productId}/>
           <Price itemId={this.state.productId}/>
           <Shipping/>
@@ -45,4 +48,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default ItemView;

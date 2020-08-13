@@ -1,6 +1,7 @@
-const React = require("react");
+import React from "react";
 import axios from "axios";
 import PhotosList from "./PhotosList.jsx";
+import styles from "../style.css";
 
 class Image extends React.Component {
   constructor(props) {
@@ -37,13 +38,13 @@ class Image extends React.Component {
 
   render() {
     return (
-      <div className="images-container">
+      <div className={styles.imagesContainer}>
         <PhotosList
-          className="photo-list"
+          className={styles.photoList}
           photos={this.state.photosList}
           clickHandler={this.imageClickHandler}
         />
-        <img className="main-image" src={this.state.mainImage} />
+        <img className={styles.mainImage} src={this.state.mainImage} />
       </div>
     );
   }

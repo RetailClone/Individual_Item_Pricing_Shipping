@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App.jsx';
-import "./style.css";
+import ItemView from './components/App.jsx';
+import styles from "./style.css";
 
-ReactDOM.render (<App/>, document.getElementById('root'));
+ReactDOM.render (<ItemView stuffId={20} />, document.getElementById('photo-view'));
