@@ -9,13 +9,16 @@ class ItemView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: 1,
+      productId: window.product_id,
       name: 'Product Name',
     };
     this.getName = this.getName.bind(this);
   }
 
   componentDidMount() {
+    // this.setState({
+    //   productId: window.product_Id,
+    // })
     this.getName(this.state.productId);
   }
 
