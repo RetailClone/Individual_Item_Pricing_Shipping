@@ -34,6 +34,7 @@ class Image extends React.Component {
 
   imageClickHandler(event) {
     this.setState({ mainImage: event });
+    console.log("still in individual",window.product_id)
   }
 
   render() {
