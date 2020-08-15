@@ -6,18 +6,23 @@ class Price extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: this.props.itemId || 22,
       price: 0,
     };
     this.getPrice = this.getPrice.bind(this);
   }
 
   componentDidMount() {
-    this.getPrice(this.state.productId);
+    this.getPrice();
   }
 
-  getPrice(prodId) {
-    axios.get(`http://localhost:7770/product/price/${prodId}`)
+  componentDidUpdate(prevProps) {
+    if (this.props.productId !== prevProps.productId) {
+      this.getPrice();
+    }
+  }
+
+  getPrice() {
+    axios.get(`http://localhost:7770/product/price/${this.props.productId}`)
       .then((response) => {
         this.setState({ price: response.data.price });
       })

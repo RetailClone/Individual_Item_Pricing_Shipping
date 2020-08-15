@@ -7,7 +7,6 @@ class Image extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      productId: this.props.itemId || 22,
       photosList: [{ id: 9999, link: "https://via.placeholder.com/300" }],
       mainImage: null,
     };
@@ -16,12 +15,18 @@ class Image extends React.Component {
   }
 
   componentDidMount() {
-    this.getPhotos(this.state.productId);
+    this.getPhotos();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.productId !== prevProps.productId) {
+      this.getPhotos();
+    }
   }
 
   //sends request to retrieve photos of product
-  getPhotos(prodId) {
-    axios.get(`http://localhost:7770/product/photos/${prodId}`)
+  getPhotos() {
+    axios.get(`http://localhost:7770/product/photos/${this.props.productId}`)
       .then((response) => {
         //defaults mainImage to first photo
         this.setState({ mainImage: response.data[0].link });

@@ -9,20 +9,25 @@ class ItemView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      windowProductId: 3,
-      productId: 3,
       name: 'Product Name',
     };
     this.getName = this.getName.bind(this);
+    this.getProductId = this.getProductId.bind(this);
   }
 
   componentDidMount() {
-    this.getName(this.state.productId);
+    this.getName();
+  }
+
+  getProductId() {
+    //if props not passed from parent component
+    //set the or side to the productId variable.
+    return this.props.productId || 1;
   }
 
   //sends request to retrieve name of product
-  getName(prodId) {
-    axios.get(`http://localhost:7770/product/name/${prodId}`)
+  getName() {
+    axios.get(`http://localhost:7770/product/name/${this.getProductId()}`)
       .then ( (response) => {
       this.setState({name: response.data.name});
       })
@@ -38,8 +43,8 @@ class ItemView extends React.Component {
           {this.state.name}
         </div>
         <div className={styles.individualItemsContent}>
-          <Image itemId={this.state.productId}/>
-          <Price itemId={this.state.productId}/>
+          <Image productId={this.getProductId()}/>
+          <Price productId={this.getProductId()}/>
           <Shipping/>
         </div>
       </div>
