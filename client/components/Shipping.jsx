@@ -12,7 +12,6 @@ class Shipping extends React.Component {
   render() {
     return (
       <div className={styles.shippingContents}>
-        <div>This is the Shipping Component</div>
         <div className={styles.shippingCase}>
           <div className={styles.shippingHeaders}>
             <div className={styles.shippingGreenText}>
@@ -28,12 +27,15 @@ class Shipping extends React.Component {
         <br></br>
         <div className={styles.shippingCase}>
           <div className={styles.shippingHeaders}>
+            <div className={styles.insidehippingHeaders}>
             <div className={styles.shippingGreenText}>
               Same Day Delivery to{" "}
               <span className={styles.zipcode}>{this.state.zipcode}</span>
             </div>
-            <button className={styles.shippingButton}>Deliver it</button>
+            <div className={styles.changeZipCode}>Edit zip code</div>
           </div>
+            <button className={styles.shippingButton}>Deliver it</button>
+            </div>
           <div className={styles.shippingBox}>
             Get it as soon as 9am tomorrow with Shipt Free with membership or
             $9.99/order <br></br>
