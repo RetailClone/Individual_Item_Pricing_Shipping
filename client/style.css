@@ -4,6 +4,8 @@
   width: 90%;
   margin-left: 5%;
   margin-right:5%;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
 }
 
 .productName {
@@ -107,7 +109,7 @@
   display: flex;
   flex-direction: column;
   width: 25%;
-  height: 400px;
+  max-height: 500px;
 }
 
 .shippingCase {
@@ -156,3 +158,21 @@
 }
 .shippingButton:hover {background-color: rgb(143, 42, 33)}
 .shippingButton:active {background-color: rgb(105, 29, 22)}
+
+.giftButton {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  width: 100%;
+  max-height: 10vw;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 10px;
+  margin-top: 1vw;
+}
+.giftButton:hover {background-color: rgb(247, 247, 247)}
+
+.giftText {
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+}
