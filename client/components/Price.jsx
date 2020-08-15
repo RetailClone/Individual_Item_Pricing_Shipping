@@ -7,8 +7,10 @@ class Price extends React.Component {
     super(props);
     this.state = {
       price: 0,
+      quantity: 1,
     };
     this.getPrice = this.getPrice.bind(this);
+    this.quanityClickHander = this.quanityClickHander.bind(this);
   }
 
   componentDidMount() {
@@ -21,8 +23,13 @@ class Price extends React.Component {
     }
   }
 
+  quanityClickHander(num) {
+    this.setState({ quantity: num });
+  }
+
   getPrice() {
-    axios.get(`http://localhost:7770/product/price/${this.props.productId}`)
+    axios
+      .get(`http://localhost:7770/product/price/${this.props.productId}`)
       .then((response) => {
         this.setState({ price: response.data.price });
       })
@@ -34,12 +41,28 @@ class Price extends React.Component {
   render() {
     return (
       <div>
-        <div className={styles.priceNumber}>{`$${this.state.price.toFixed(2)}`}</div>
+        <div className={styles.priceNumber}>{`$${this.state.price.toFixed(
+          2
+        )}`}</div>
+        <div>Quantity</div>
         <div className={styles.quantityDropdown}>
-          <button className={styles.quantityDropbtn}>Quantity</button>
+          <select className={styles.quantityDropbtn}>
+            <option
+              className={styles.quantityOption}
+            >{`${this.state.quantity}`}</option>
+          </select>
           <div className={styles.quantityDropdownContent}>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num, i) => {
-              return <a key={i}>{num}</a>;
+              return (
+                <a
+                  key={i}
+                  onClick={() => {
+                    this.quanityClickHander(num);
+                  }}
+                >
+                  {num}
+                </a>
+              );
             })}
           </div>
         </div>
