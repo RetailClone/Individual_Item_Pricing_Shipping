@@ -50,7 +50,9 @@ class Image extends React.Component {
           photos={this.state.photosList}
           clickHandler={this.imageClickHandler}
         />
-        <img className={styles.mainImage} src={this.state.mainImage} />
+        <div className={styles.MainImageWrapper}>
+          <img className={`${styles.mainImage} ${styles.slide}`} src={this.state.mainImage} />
+        </div>
       </div>
     );
   }

@@ -47,15 +47,16 @@
   margin-right: 1vw;
 }
 
-.mainImage {
+ .mainImage {
   display:flex;
+  overflow: hidden;
   width: 35vw;
   height: 35vw;
-  height: auto;
   border-style: solid;
   border-width: thin;
   background-color: black;
 }
+
 
 /* this is in Price */
 .priceNumber {
