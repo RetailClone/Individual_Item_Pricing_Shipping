@@ -1,0 +1,40 @@
+{
+  "name": "individual_item_pricing_shipping",
+  "version": "1.0.0",
+  "description": "This component displays images of the product, the price, and the shipping infomation",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "start-frontend": "webpack -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RetailClone/Individual_Item_Pricing_Shipping.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RetailClone/Individual_Item_Pricing_Shipping/issues"
+  },
+  "homepage": "https://github.com/RetailClone/Individual_Item_Pricing_Shipping#readme",
+  "dependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "axios": "^0.19.2",
+    "babel-loader": "^8.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "reactdom": "^2.0.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {
+    "css-loader": "^4.2.1",
+    "style-loader": "^1.2.1"
+  }
+}

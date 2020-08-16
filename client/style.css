@@ -1,0 +1,133 @@
+
+/* this is in App */
+.individualItemsMainView {
+  width: 90%;
+  margin-left: 10%;
+  margin-right:10%;
+}
+
+.productName {
+  width: 100%;
+  font-size: 1.5vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  white-space: normal;
+  color: rgb(51, 51, 51);
+  padding: 20px;
+}
+
+.individualItemsContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* this is in Image */
+.imagesContainer {
+  width: 60%;
+  display: flex;
+}
+
+.photoList {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.singlePhoto {
+  display:flex;
+  width: 6vw;
+  height: 6vw;
+  height: auto;
+  border-style: solid;
+  border-width: thin;
+  background-color: black;
+  margin-bottom: 1vw;
+  margin-right: 1vw;
+}
+
+.mainImage {
+  display:flex;
+  width: 35vw;
+  height: 35vw;
+  height: auto;
+  border-style: solid;
+  border-width: thin;
+  background-color: black;
+}
+
+/* this is in Price */
+.priceNumber {
+  font-size: 2vw;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  white-space: normal;
+  color: rgb(51, 51, 51);
+}
+.quantityDropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.quantityDropbtn {
+  background-color: white;
+  color:  rgb(51, 51, 51);
+  padding: 16px;
+  font-size: 16px;
+}
+
+.quantityDropdownContent {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.quantityDropdownContent a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.quantityDropdownContent a:hover {background-color: #f1f1f1; text-decoration: underline}
+.quantityDropdown:hover .quantityDropdownContent {display: block;}
+.quantityDropdown:hover .quantityDropbtn {background-color: rgb(247, 247, 247);}
+
+/* this is in Shipping */
+.shippingContents {
+  width: 25%;
+  height: 325px;
+  background-color: rgb(247, 247, 247);
+  padding-top: 4%;
+  padding-right: 2%;
+  padding-bottom: 4%;
+  padding-left: 2%;;
+}
+
+.shippingHeaders {
+  display:flex;
+  align-content: space-between;
+}
+.shippingGreenText {
+  padding:10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: green;
+}
+
+.shippingButton {
+  width: 40%;
+  height: 50%;
+  padding:3%;
+  border-radius: 5px;
+  background-color: #CA0813;
+  color: white;
+}
+.shippingButton:hover {background-color: rgb(143, 42, 33)}
+.shippingButton:active {background-color: rgb(105, 29, 22)}
