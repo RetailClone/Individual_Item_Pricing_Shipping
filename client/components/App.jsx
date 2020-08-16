@@ -22,7 +22,8 @@ class ItemView extends React.Component {
   getProductId() {
     //if props not passed from parent component
     //set the or side to the productId variable.
-    return this.props.productId || 1;
+    //and this will pass props to the children components
+    return this.props.productId || window.product_id || 1;
   }
 
   //sends request to retrieve name of product
