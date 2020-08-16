@@ -1,9 +1,10 @@
-
 /* this is in App */
 .individualItemsMainView {
   width: 90%;
+  display: flex;
+  flex-direction: column;
   margin-left: 5%;
-  margin-right:5%;
+  margin-right: 5%;
   margin-top: 2vw;
   margin-bottom: 2vw;
 }
@@ -38,7 +39,7 @@
 }
 
 .singlePhoto {
-  display:flex;
+  display: flex;
   width: 6vw;
   height: 6vw;
   height: auto;
@@ -49,15 +50,24 @@
   margin-right: 1vw;
 }
 
- .mainImage {
-  display:flex;
-  overflow: hidden;
+.mainImageWrapper {
   width: 30vw;
   height: 30vw;
   border-style: solid;
   border-width: thin;
   background-color: black;
   margin-left: 2vw;
+  overflow: hidden;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mainImage:hover {
+  transform: scale(1.5);
 }
 
 
@@ -80,13 +90,13 @@
 
 .quantityDropbtn {
   background-color: white;
-  color:  rgb(51, 51, 51);
+  color: rgb(51, 51, 51);
   font-size: 1vw;
   padding-top: 1vw;
   padding-bottom: 1vw;
   padding-left: 3vw;
   padding-right: 3vw;
-  border-radius: 5px
+  border-radius: 5px;
 }
 
 .quantityOption {
@@ -97,9 +107,9 @@
   display: none;
   position: absolute;
   right: 0;
-   background-color: #f9f9f9;
+  background-color: #f9f9f9;
   min-width: 180px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -110,9 +120,16 @@
   display: block;
 }
 
-.quantityDropdownContent a:hover {background-color: #f1f1f1; text-decoration: underline}
-.quantityDropdown:hover .quantityDropdownContent {display: block;}
-.quantityDropdown:hover .quantityDropbtn {background-color: rgb(247, 247, 247);}
+.quantityDropdownContent a:hover {
+  background-color: #f1f1f1;
+  text-decoration: underline;
+}
+.quantityDropdown:hover .quantityDropdownContent {
+  display: block;
+}
+.quantityDropdown:hover .quantityDropbtn {
+  background-color: rgb(247, 247, 247);
+}
 
 /* this is in Shipping */
 .shippingContents {
@@ -131,7 +148,7 @@
 }
 
 .shippingHeaders {
-  display:flex;
+  display: flex;
   align-content: space-between;
   padding-top: 2%;
   padding-right: 2%;
@@ -147,7 +164,7 @@
 }
 
 .shippingGreenText {
-  padding:10px;
+  padding: 10px;
   font-size: 16px;
   font-weight: bold;
   color: green;
@@ -161,13 +178,17 @@
 .shippingButton {
   width: 40%;
   height: 50%;
-  padding:3%;
+  padding: 3%;
   border-radius: 5px;
-  background-color: #CA0813;
+  background-color: #ca0813;
   color: white;
 }
-.shippingButton:hover {background-color: rgb(143, 42, 33)}
-.shippingButton:active {background-color: rgb(105, 29, 22)}
+.shippingButton:hover {
+  background-color: rgb(143, 42, 33);
+}
+.shippingButton:active {
+  background-color: rgb(105, 29, 22);
+}
 
 .giftButton {
   display: flex;
@@ -180,7 +201,9 @@
   border-radius: 10px;
   margin-top: 1vw;
 }
-.giftButton:hover {background-color: rgb(247, 247, 247)}
+.giftButton:hover {
+  background-color: rgb(247, 247, 247);
+}
 
 .giftText {
   padding-top: 1vw;

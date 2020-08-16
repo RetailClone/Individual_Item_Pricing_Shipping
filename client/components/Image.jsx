@@ -26,7 +26,8 @@ class Image extends React.Component {
 
   //sends request to retrieve photos of product
   getPhotos() {
-    axios.get(`http://localhost:7770/product/photos/${this.props.productId}`)
+    axios
+      .get(`http://localhost:7770/product/photos/${this.props.productId}`)
       .then((response) => {
         //defaults mainImage to first photo
         this.setState({ mainImage: response.data[0].link });
@@ -49,8 +50,13 @@ class Image extends React.Component {
           photos={this.state.photosList}
           clickHandler={this.imageClickHandler}
         />
-        <div className={styles.MainImageWrapper}>
-          <img className={`${styles.mainImage} ${styles.slide}`} src={this.state.mainImage} />
+        <div>
+          <div className={styles.mainImageWrapper}>
+            <img
+              className={`${styles.mainImage} ${styles.slide}`}
+              src={this.state.mainImage}
+            />
+          </div>
         </div>
       </div>
     );
