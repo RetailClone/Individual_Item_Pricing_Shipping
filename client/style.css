@@ -1,9 +1,12 @@
-
 /* this is in App */
 .individualItemsMainView {
   width: 90%;
-  margin-left: 10%;
-  margin-right:10%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
 }
 
 .productName {
@@ -25,7 +28,7 @@
 
 /* this is in Image */
 .imagesContainer {
-  width: 60%;
+  width: 40%;
   display: flex;
 }
 
@@ -36,7 +39,7 @@
 }
 
 .singlePhoto {
-  display:flex;
+  display: flex;
   width: 6vw;
   height: 6vw;
   height: auto;
@@ -47,18 +50,32 @@
   margin-right: 1vw;
 }
 
-.mainImage {
-  display:flex;
-  width: 35vw;
-  height: 35vw;
-  height: auto;
+.mainImageWrapper {
+  width: 30vw;
+  height: 30vw;
   border-style: solid;
   border-width: thin;
   background-color: black;
+  margin-left: 2vw;
+  overflow: hidden;
 }
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  transition: 0.5s all ease-in-out;
+  overflow: hidden;
+}
+
+.mainImage:hover {
+  transform: scale(1.5);
+}
+
 
 /* this is in Price */
 .priceNumber {
+  display: flex;
+  align-content: flex-start;
   font-size: 2vw;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
@@ -66,6 +83,7 @@
   white-space: normal;
   color: rgb(51, 51, 51);
 }
+
 .quantityDropdown {
   position: relative;
   display: inline-block;
@@ -73,9 +91,17 @@
 
 .quantityDropbtn {
   background-color: white;
-  color:  rgb(51, 51, 51);
-  padding: 16px;
-  font-size: 16px;
+  color: rgb(51, 51, 51);
+  font-size: 1vw;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  border-radius: 5px;
+}
+
+.quantityOption {
+  display: none;
 }
 
 .quantityDropdownContent {
@@ -83,8 +109,8 @@
   position: absolute;
   right: 0;
   background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -95,39 +121,98 @@
   display: block;
 }
 
-.quantityDropdownContent a:hover {background-color: #f1f1f1; text-decoration: underline}
-.quantityDropdown:hover .quantityDropdownContent {display: block;}
-.quantityDropdown:hover .quantityDropbtn {background-color: rgb(247, 247, 247);}
+.quantityDropdownContent a:hover {
+  background-color: #f1f1f1;
+  text-decoration: underline;
+}
+.quantityDropdown:hover .quantityDropdownContent {
+  display: block;
+}
+.quantityDropdown:hover .quantityDropbtn {
+  background-color: rgb(247, 247, 247);
+}
 
 /* this is in Shipping */
 .shippingContents {
+  display: flex;
+  flex-direction: column;
   width: 25%;
-  height: 325px;
+  max-height: 500px;
+}
+
+.shippingCase {
   background-color: rgb(247, 247, 247);
-  padding-top: 4%;
+  padding-top: 2%;
   padding-right: 2%;
   padding-bottom: 4%;
-  padding-left: 2%;;
+  padding-left: 2%;
 }
 
 .shippingHeaders {
-  display:flex;
+  display: flex;
   align-content: space-between;
+  padding-top: 2%;
+  padding-right: 2%;
+  padding-bottom: 4%;
+  padding-left: 2%;
+  background-color: rgb(247, 247, 247);
+  margin-top: 1vw;
 }
+
+.insideShippingHeaders {
+  display: flex;
+  flex-direction: column;
+}
+
 .shippingGreenText {
-  padding:10px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: medium;
   font-weight: bold;
   color: green;
+}
+
+.cityName {
+  font-size: large;
+  font-weight: bolder;
+  color: black;
+}
+
+.changeZipCode {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .shippingButton {
   width: 40%;
   height: 50%;
-  padding:3%;
+  padding: 3%;
   border-radius: 5px;
-  background-color: #CA0813;
+  background-color: #ca0813;
   color: white;
 }
-.shippingButton:hover {background-color: rgb(143, 42, 33)}
-.shippingButton:active {background-color: rgb(105, 29, 22)}
+.shippingButton:hover {
+  background-color: rgb(143, 42, 33);
+}
+.shippingButton:active {
+  background-color: rgb(105, 29, 22);
+}
+
+.giftButton {
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+  width: 100%;
+  max-height: 10vw;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 10px;
+  margin-top: 1vw;
+}
+.giftButton:hover {
+  background-color: rgb(247, 247, 247);
+}
+
+.giftText {
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+}
