@@ -166,9 +166,15 @@
 
 .shippingGreenText {
   padding: 10px;
-  font-size: 16px;
+  font-size: medium;
   font-weight: bold;
   color: green;
+}
+
+.cityName {
+  font-size: large;
+  font-weight: bolder;
+  color: black;
 }
 
 .changeZipCode {

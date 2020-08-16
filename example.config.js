@@ -1,4 +1,4 @@
-const apikey = "";
+const apikey = "API_KEY_HERE";
 
 
 module.exports = {apikey};

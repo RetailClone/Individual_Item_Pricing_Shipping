@@ -6,12 +6,12 @@ class Shipping extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      zipcode: 78613,
+      zipcode: 73301,
       showMyComponent: false,
       city: "Austin",
     };
-    this.getCity = this.getCity.bind(this);
     this.zipCodeInput = React.createRef();
+    this.getCity = this.getCity.bind(this);
     this.onZipCodeClickHandler = this.onZipCodeClickHandler.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -20,29 +20,32 @@ class Shipping extends React.Component {
     this.getCity();
   }
 
+  //if change in zipcode, update city
   componentDidUpdate(_, prevState) {
     if (this.state.zipcode !== prevState.zipcode) {
       this.getCity();
     }
   }
 
-
+  //get request for city name
   getCity() {
     axios
       .get(`http://localhost:7770/product/zipcode/${this.state.zipcode}`)
       .then((response) => {
-        console.log("get zipcode", response.data.city)
-        this.setState({ city: response.data.city || 'INVALID' });
+        this.setState({ city: response.data.city || "INVALID" });
       })
       .catch((error) => {
         console.log(error);
+        this.setState({ city: response.data.city || "Error" });
       });
   }
 
+  //click handler to show zipcode form
   onZipCodeClickHandler() {
     this.setState({ showMyComponent: !this.state.showMyComponent });
   }
 
+  //submit handler to close form and change zipcode
   handleSubmit(event) {
     event.preventDefault();
     this.setState({ zipcode: this.zipCodeInput.current.value });
@@ -55,7 +58,8 @@ class Shipping extends React.Component {
         <div className={styles.shippingCase}>
           <div className={styles.shippingHeaders}>
             <div className={styles.shippingGreenText}>
-              Pick up tomorrow at <span>{this.state.city}</span>
+              Pick up tomorrow at{" "}
+              <span className={styles.cityName}>{this.state.city}</span>
             </div>
             <button className={styles.shippingButton}>Pick it up</button>
           </div>
