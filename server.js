@@ -3,6 +3,7 @@ const axios = require("axios");
 const cors = require("cors");
 const path = require("path");
 const db = require("./database/queries.js");
+const zip = require("./example.config.js");
 const PORT = 7770;
 
 const app = express();
@@ -82,11 +83,11 @@ app.get("/product/zipcode/:zipcode", (req, res) => {
   let zipcode = parseInt(req.params.zipcode);
   axios
     .get(
-      `https://www.zipcodeapi.com/rest/xjSXYOXxhEenFhgY5JxwzDb21JX1qKkwITnH0WcPmG34LZE5VmcVzvodVKWxZWBi/info.json/${zipcode}/degrees`
+      `https://www.zipcodeapi.com/rest/${zip.apikey}/info.json/${zipcode}/degrees`
     )
     .then(function (response) {
-      console.log(response.data.city);
-      res.send(response.data.city);
+      console.log(response.data);
+      res.send(response.data);
     })
     .catch(function (error) {
       console.log(error);

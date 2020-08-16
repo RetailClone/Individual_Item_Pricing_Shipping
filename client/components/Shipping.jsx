@@ -1,16 +1,42 @@
 import React from "react";
 import styles from "../style.css";
+import axios from "axios";
 
 class Shipping extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      zipcode: 78652,
+      zipcode: 78613,
       showMyComponent: false,
+      city: "Austin",
     };
+    this.getCity = this.getCity.bind(this);
     this.zipCodeInput = React.createRef();
     this.onZipCodeClickHandler = this.onZipCodeClickHandler.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.getCity();
+  }
+
+  componentDidUpdate(_, prevState) {
+    if (this.state.zipcode !== prevState.zipcode) {
+      this.getCity();
+    }
+  }
+
+
+  getCity() {
+    axios
+      .get(`http://localhost:7770/product/zipcode/${this.state.zipcode}`)
+      .then((response) => {
+        console.log("get zipcode", response.data.city)
+        this.setState({ city: response.data.city || 'INVALID' });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   onZipCodeClickHandler() {
@@ -29,7 +55,7 @@ class Shipping extends React.Component {
         <div className={styles.shippingCase}>
           <div className={styles.shippingHeaders}>
             <div className={styles.shippingGreenText}>
-              Pick up tomorrow at <span>Austin</span>
+              Pick up tomorrow at <span>{this.state.city}</span>
             </div>
             <button className={styles.shippingButton}>Pick it up</button>
           </div>
