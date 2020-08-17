@@ -16,15 +16,12 @@ class ItemView extends React.Component {
   }
 
   componentDidMount() {
-    // this.setState({
-    //   productId: window.product_Id,
-    // })
     this.getName(this.state.productId);
   }
 
   //sends request to retrieve name of product
   getName(prodId) {
-    axios.get(`http://localhost:7770/product/name/${prodId}`)
+    axios.get(`http://${window.location.hostname}:7770/product/name/${prodId}`)
       .then ( (response) => {
       this.setState({name: response.data.name});
       })
