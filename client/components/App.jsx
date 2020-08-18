@@ -17,14 +17,14 @@ class ItemView extends React.Component {
   }
 
   componentDidMount() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('productId');
     this.getName();
   }
 
   getProductId() {
     //if props not passed from parent component
     //set the or side to the productId variable.
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('productId');
     return this.props.productId || window.product_id || productId || 1;
   }
 
