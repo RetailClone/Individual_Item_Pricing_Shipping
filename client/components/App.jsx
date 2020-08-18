@@ -1,15 +1,16 @@
-import React from 'react';
-import Image from './Image.jsx';
-import Price from './Price.jsx';
-import Shipping from './Shipping.jsx';
-import axios from 'axios';
+import React from "react";
+import Image from "./Image.jsx";
+import Price from "./Price.jsx";
+import Shipping from "./Shipping.jsx";
+import axios from "axios";
 import styles from "../style.css";
+axios.defaults.baseURL = "http://ec2-18-191-90-13.us-east-2.compute.amazonaws.com:7770";
 
 class ItemView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'Product Name',
+      name: "Product Name",
     };
     this.getName = this.getName.bind(this);
     this.getProductId = this.getProductId.bind(this);
@@ -22,34 +23,32 @@ class ItemView extends React.Component {
   getProductId() {
     //if props not passed from parent component
     //set the or side to the productId variable.
-    //and this will pass props to the children components
     return this.props.productId || window.product_id || 1;
   }
 
   //sends request to retrieve name of product
   getName() {
-    axios.get(`http://localhost:7770/product/name/${this.getProductId()}`)
-      .then ( (response) => {
-      this.setState({name: response.data.name});
+    axios
+      .get(`/product/name/${this.getProductId()}`)
+      .then((response) => {
+        this.setState({ name: response.data.name });
       })
-      .catch( (error) => {
+      .catch((error) => {
         console.log(error);
-      })
+      });
   }
 
   render() {
     return (
       <div className={styles.individualItemsMainView}>
-        <div className={styles.productName}>
-          {this.state.name}
-        </div>
+        <div className={styles.productName}>{this.state.name}</div>
         <div className={styles.individualItemsContent}>
-          <Image productId={this.getProductId()}/>
-          <Price productId={this.getProductId()}/>
-          <Shipping/>
+          <Image productId={this.getProductId()} />
+          <Price productId={this.getProductId()} />
+          <Shipping />
         </div>
       </div>
-    )
+    );
   }
 }
 

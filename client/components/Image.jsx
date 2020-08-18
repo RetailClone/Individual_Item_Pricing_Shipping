@@ -27,7 +27,7 @@ class Image extends React.Component {
   //sends request to retrieve photos of product
   getPhotos() {
     axios
-      .get(`http://localhost:7770/product/photos/${this.props.productId}`)
+      .get(`/product/photos/${this.props.productId}`)
       .then((response) => {
         //defaults mainImage to first photo
         this.setState({ mainImage: response.data[0].link });

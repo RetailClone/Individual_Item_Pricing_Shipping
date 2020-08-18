@@ -29,7 +29,7 @@ class Price extends React.Component {
 
   getPrice() {
     axios
-      .get(`http://localhost:7770/product/price/${this.props.productId}`)
+      .get(`/product/price/${this.props.productId}`)
       .then((response) => {
         this.setState({ price: response.data.price });
       })

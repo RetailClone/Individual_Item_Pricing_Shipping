@@ -30,7 +30,7 @@ class Shipping extends React.Component {
   //get request for city name
   getCity() {
     axios
-      .get(`http://localhost:7770/product/zipcode/${this.state.zipcode}`)
+      .get(`/product/zipcode/${this.state.zipcode}`)
       .then((response) => {
         this.setState({ city: response.data.city || "INVALID" });
       })
