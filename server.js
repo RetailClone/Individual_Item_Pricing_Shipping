@@ -1,10 +1,13 @@
 const express = require("express");
+const axios = require("axios");
 const cors = require("cors");
 const path = require("path");
 const db = require("./database/queries.js");
+const zip = require("./config.js");
 const PORT = 7770;
 
 const app = express();
+app.use(express.json());
 app.use(cors());
 
 app.use(express.static(__dirname + "/public"));
@@ -74,6 +77,21 @@ app.get("/product/photos/:product", (req, res) => {
       res.status(200).send(results);
     }
   });
+});
+
+app.get("/product/zipcode/:zipcode", (req, res) => {
+  let zipcode = parseInt(req.params.zipcode);
+  axios
+    .get(
+      `https://www.zipcodeapi.com/rest/${zip.apikey}/info.json/${zipcode}/degrees`
+    )
+    .then(function (response) {
+      res.send(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+      res.send("invalid").sendStatus(400);
+    });
 });
 
 app.listen(PORT, () =>
