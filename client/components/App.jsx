@@ -17,17 +17,13 @@ class ItemView extends React.Component {
   }
 
   componentDidMount() {
-    // sets default baseURL for ALL axios reqs
-    // sets default baseURL for ALL axios reqs
-    //"http://localhost:7770";
     this.getName();
-    console.log("axios base url", axios.defaults.baseURL);
   }
 
   getProductId() {
     //if props not passed from parent component
     //set the or side to the productId variable.
-    return this.props.productId || 1;
+    return this.props.productId || window.product_id || 1;
   }
 
   //sends request to retrieve name of product
