@@ -4,6 +4,7 @@ import Price from "./Price.jsx";
 import Shipping from "./Shipping.jsx";
 import axios from "axios";
 import styles from "../style.css";
+axios.defaults.baseURL = "http://ec2-18-191-90-13.us-east-2.compute.amazonaws.com:7770";
 
 class ItemView extends React.Component {
   constructor(props) {
@@ -18,8 +19,6 @@ class ItemView extends React.Component {
   componentDidMount() {
     // sets default baseURL for ALL axios reqs
     // sets default baseURL for ALL axios reqs
-    axios.defaults.baseURL =
-      "http://ec2-18-191-90-13.us-east-2.compute.amazonaws.com:7770";
     //"http://localhost:7770";
     this.getName();
     console.log("axios base url", axios.defaults.baseURL);

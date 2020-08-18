@@ -15,8 +15,6 @@ class Image extends React.Component {
   }
 
   componentDidMount() {
-    axios.defaults.baseURL =
-      "http://ec2-18-191-90-13.us-east-2.compute.amazonaws.com:7770";
     this.getPhotos();
   }
 
