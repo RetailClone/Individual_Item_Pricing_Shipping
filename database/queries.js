@@ -13,7 +13,7 @@ const testDbConnect = (callback) => {
       callback(null, results);
     }
   });
-}
+};
 
 const getName = (id, callback) => {
   connection.query(
