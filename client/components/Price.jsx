@@ -10,14 +10,14 @@ class Price extends React.Component {
       price: 0,
     };
     this.getPrice = this.getPrice.bind(this);
-  }
+  } 
 
   componentDidMount() {
     this.getPrice(this.state.productId);
   }
 
   getPrice(prodId) {
-    axios.get(`http://localhost:7770/product/price/${prodId}`)
+    axios.get(`http://${window.location.hostname}:7770/product/price/${prodId}`)
       .then((response) => {
         this.setState({ price: response.data.price });
       })
