@@ -17,9 +17,9 @@ class ItemView extends React.Component {
   }
 
   componentDidMount() {
-    this.getName();
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get('productId');
+    this.getName();
   }
 
   getProductId() {
