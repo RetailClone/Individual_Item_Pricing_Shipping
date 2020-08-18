@@ -19,8 +19,7 @@ class ItemView extends React.Component {
     // sets default baseURL for ALL axios reqs
     // sets default baseURL for ALL axios reqs
     axios.defaults.baseURL =
-      `http://${window.location.hostname}:7770`
-      //"http://ec2-18-191-90-13.us-east-2.compute.amazonaws.com:7770";	      "http://ec2-18-191-7-97.us-east-2.compute.amazonaws.com:1701";
+      "http://ec2-18-191-90-13.us-east-2.compute.amazonaws.com:7770";
       //"http://localhost:7770";
     this.getName();
     console.log("axios base url",axios.defaults.baseURL);
