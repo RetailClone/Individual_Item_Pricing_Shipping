@@ -47,9 +47,9 @@ class Price extends React.Component {
         <div>Quantity</div>
         <div className={styles.quantityDropdown}>
           <select className={styles.quantityDropbtn}>
-            <option
-              className={styles.quantityOption}
-            >{`${this.state.quantity}`}</option>
+            <option className={styles.quantityOption}>
+              {`${this.state.quantity}`}
+            </option>
           </select>
           <div className={styles.quantityDropdownContent}>
             {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num, i) => {
