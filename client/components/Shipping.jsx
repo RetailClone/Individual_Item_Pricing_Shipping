@@ -99,9 +99,9 @@ class Shipping extends React.Component {
             <span>Learn more</span>
           </div>
         </div>
-        <div className={styles.giftButton}>
+        {/* <div className={styles.giftButton}>
           <div className={styles.giftText}>Add to registry</div>
-        </div>
+        </div> */}
       </div>
     );
   }

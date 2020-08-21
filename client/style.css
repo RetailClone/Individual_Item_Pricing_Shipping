@@ -23,6 +23,7 @@
 .individualItemsContent {
   width: 100%;
   display: flex;
+  box-sizing: border-box;
   justify-content: space-around;
 }
 
