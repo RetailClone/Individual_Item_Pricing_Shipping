@@ -1,6 +1,6 @@
 /* This is in App */
 .individualItemsMainView {
-  width: 90%;
+  max-width: 1400px;
   display: flex;
   flex-direction: column;
   margin-left: 5%;
@@ -196,7 +196,7 @@
   background-color: rgb(105, 29, 22);
 }
 
-.giftButton {
+/* .giftButton {
   display: flex;
   justify-content: space-around;
   overflow: hidden;
@@ -214,4 +214,4 @@
 .giftText {
   padding-top: 1vw;
   padding-bottom: 1vw;
-}
+} */
