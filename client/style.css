@@ -177,6 +177,13 @@
   flex-direction: column;
 }
 
+.shippingBox {
+text-overflow: ellipsis;
+line-height: 1em;
+height: 4em;
+overflow: hidden;
+}
+
 .shippingGreenText {
   padding: 10px;
   font-size: medium;
@@ -216,7 +223,7 @@
   justify-content: space-around;
   overflow: hidden;
   width: 100%;
-  max-height: 10vw;
+  max-height: 10%;
   border-style: solid;
   border-width: thin;
   border-radius: 10px;
