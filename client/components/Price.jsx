@@ -10,20 +10,21 @@ class Price extends React.Component {
       quantity: 1,
     };
     this.getPrice = this.getPrice.bind(this);
-    this.quanityClickHander = this.quanityClickHander.bind(this);
+    this.quantityClickHander = this.quantityClickHandler.bind(this);
   }
 
   componentDidMount() {
     this.getPrice();
   }
 
+  //when productId changes, get request for price
   componentDidUpdate(prevProps) {
     if (this.props.productId !== prevProps.productId) {
       this.getPrice();
     }
   }
 
-  quanityClickHander(num) {
+  quantityClickHandler(num) {
     this.setState({ quantity: num });
   }
 
@@ -47,17 +48,17 @@ class Price extends React.Component {
         <div>Quantity</div>
         <div className={styles.quantityDropdown}>
           <select className={styles.quantityDropbtn}>
-            <option
-              className={styles.quantityOption}
-            >{`${this.state.quantity}`}</option>
+            <option className={styles.quantityOption}>
+              {`${this.state.quantity}`}
+            </option>
           </select>
           <div className={styles.quantityDropdownContent}>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num, i) => {
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num, i) => { //Look into Array fill/range
               return (
                 <a
                   key={i}
                   onClick={() => {
-                    this.quanityClickHander(num);
+                    this.quantityClickHandler(num);
                   }}
                 >
                   {num}

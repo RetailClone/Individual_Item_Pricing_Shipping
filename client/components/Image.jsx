@@ -7,7 +7,7 @@ class Image extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      photosList: [{ id: 9999, link: "https://via.placeholder.com/300" }],
+      photosList: [{ id: 9999, link: "https://hackreactorfecproject.s3.us-east-2.amazonaws.com/Photo+unavailable.jpg" }],
       mainImage: null,
     };
     this.getPhotos = this.getPhotos.bind(this);

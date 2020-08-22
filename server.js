@@ -70,7 +70,7 @@ app.get("/product/photos/:product", (req, res) => {
       if (results.length === 0) {
         console.log("item not in database");
         res.send([
-          { link: "https://atlanticairtool.com/images/Specials/1400/1401.png" },
+          { link: "https://hackreactorfecproject.s3.us-east-2.amazonaws.com/Photo+unavailable.jpg" },
         ]);
       }
       console.log("Successful photos query");

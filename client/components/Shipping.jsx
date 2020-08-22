@@ -29,8 +29,9 @@ class Shipping extends React.Component {
 
   //get request for city name
   getCity() {
+    const { zipcode } = this.state;
     axios
-      .get(`/product/zipcode/${this.state.zipcode}`)
+      .get(`/product/zipcode/${zipcode}`)
       .then((response) => {
         this.setState({ city: response.data.city || "INVALID" });
       })
@@ -103,12 +104,12 @@ class Shipping extends React.Component {
             <span>Learn more</span>
           </div>
         </div>
-        <div className={styles.giftButton}>
+        {/* <div className={styles.giftButton}>
           <div className={styles.giftText}>Add to registry</div>
-        </div>
+        </div> */}
       </div>
     );
   }
-}
+};
 
 export default Shipping;
