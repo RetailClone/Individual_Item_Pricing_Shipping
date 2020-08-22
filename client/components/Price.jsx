@@ -40,7 +40,7 @@ class Price extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={styles.priceContainer}>
         <div className={styles.priceNumber}>{`$${this.state.price.toFixed(
           2
         )}`}</div>

@@ -4,7 +4,8 @@ import Price from "./Price.jsx";
 import Shipping from "./Shipping.jsx";
 import axios from "axios";
 import styles from "../style.css";
-axios.defaults.baseURL = "http://ec2-18-191-90-13.us-east-2.compute.amazonaws.com:7770";
+axios.defaults.baseURL =
+  "http://ec2-18-191-90-13.us-east-2.compute.amazonaws.com:7770";
 
 class ItemView extends React.Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class ItemView extends React.Component {
     //if props not passed from parent component
     //set the or side to the productId variable.
     const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('productId');
+    const productId = urlParams.get("productId");
     return this.props.productId || window.product_id || productId || 1;
   }
 
@@ -42,12 +43,14 @@ class ItemView extends React.Component {
 
   render() {
     return (
-      <div className={styles.individualItemsMainView}>
-        <div className={styles.productName}>{this.state.name}</div>
-        <div className={styles.individualItemsContent}>
-          <Image productId={this.getProductId()} />
-          <Price productId={this.getProductId()} />
-          <Shipping />
+      <div className={styles.photoView}>
+        <div className={styles.individualItemsMainView}>
+          <div className={styles.productName}>{this.state.name}</div>
+          <div className={styles.individualItemsContent}>
+            <Image productId={this.getProductId()} />
+            <Price productId={this.getProductId()} />
+            <Shipping />
+          </div>
         </div>
       </div>
     );

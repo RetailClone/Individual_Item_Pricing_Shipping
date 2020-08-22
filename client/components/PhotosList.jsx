@@ -3,7 +3,7 @@ import styles from "../style.css";
 
 const PhotosList = (props) => {
   return (
-    <div>
+    <div className={styles.photoListContainer}>
       {props.photos.map((photoObj) => {
         return (
           <img
