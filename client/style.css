@@ -180,7 +180,7 @@
 .shippingBox {
 text-overflow: ellipsis;
 line-height: 1em;
-height: 4em;
+height: 3em;
 overflow: hidden;
 }
 
@@ -189,6 +189,10 @@ overflow: hidden;
   font-size: medium;
   font-weight: bold;
   color: green;
+  text-overflow: ellipsis;
+  line-height: 1.5em;
+  height: 4em;
+  overflow: hidden;
 }
 
 .cityName {
