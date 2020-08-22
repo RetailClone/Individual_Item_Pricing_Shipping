@@ -26,7 +26,7 @@ class ItemView extends React.Component {
     //set the or side to the productId variable.
     const urlParams = new URLSearchParams(window.location.search);
     const productId = urlParams.get("productId");
-    return this.props.productId || window.product_id || productId || 9999;
+    return this.props.productId || window.product_id || productId || 1;
   }
 
   //sends request to retrieve name of product
