@@ -43,12 +43,14 @@ class ItemView extends React.Component {
 
   render() {
     return (
-      <div className={styles.individualItemsMainView}>
-        <div className={styles.productName}>{this.state.name}</div>
-        <div className={styles.individualItemsContent}>
-          <Image productId={this.getProductId()} />
-          <Price productId={this.getProductId()} />
-          <Shipping />
+      <div className={styles.photoView}>
+        <div className={styles.individualItemsMainView}>
+          <div className={styles.productName}>{this.state.name}</div>
+          <div className={styles.individualItemsContent}>
+            <Image productId={this.getProductId()} />
+            <Price productId={this.getProductId()} />
+            <Shipping />
+          </div>
         </div>
       </div>
     );

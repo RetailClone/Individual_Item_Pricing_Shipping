@@ -46,7 +46,6 @@ class Image extends React.Component {
     return (
       <div className={styles.imagesContainer}>
         <PhotosList
-          className={styles.photoList}
           photos={this.state.photosList}
           clickHandler={this.imageClickHandler}
         />
