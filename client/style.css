@@ -1,16 +1,17 @@
 /* This is in App */
 
 .photoView {
-  max-width: 1400px;
-  max-height: fit-content;
+  display: flex;
+  justify-content: center;
 }
 
 .individualItemsMainView {
-  width: 100%;
+  width: 1400px;
   display: flex;
   flex-direction: column;
   margin-top: 2vw;
   margin-bottom: 2vw;
+  max-height: fit-content;
 }
 
 .productName {
