@@ -200,6 +200,7 @@
   height: 50%;
   padding: 3%;
   border-radius: 5px;
+  border: none;
   background-color: #ca0813;
   color: white;
 }
