@@ -27,7 +27,8 @@ class Shipping extends React.Component {
     }
   }
 
-  //get request for city name
+  //send get request to backend for city name
+  //if unable to get city name default to "INVALID"
   getCity() {
     const { zipcode } = this.state;
     axios
@@ -43,29 +44,32 @@ class Shipping extends React.Component {
 
   //click handler to show zipcode form
   onZipCodeClickHandler() {
-    this.setState({ showMyComponent: !this.state.showMyComponent });
+    const { showMyComponent } = this.state;
+    this.setState({ showMyComponent: !showMyComponent });
   }
 
   //submit handler to close form and change zipcode
   //Use of regex to prevent invalid zip code submissions
   handleSubmit(event) {
     event.preventDefault();
+    const { showMyComponent } = this.state;
     let userZipCode = this.zipCodeInput.current.value;
     let zipCodeRule = /^\d{5}$/;
     if (zipCodeRule.test(userZipCode)) {
       this.setState({ zipcode: this.zipCodeInput.current.value });
     }
-    this.setState({ showMyComponent: !this.state.showMyComponent });
+    this.setState({ showMyComponent: !showMyComponent });
   }
 
   render() {
+    const {city, zipcode, showMyComponent} = this.state;
     return (
       <div className={styles.shippingContents}>
         <div className={styles.shippingCase}>
           <div className={styles.shippingHeaders}>
             <div className={styles.shippingGreenText}>
               Pick up tomorrow at{" "}
-              <span className={styles.cityName}>{this.state.city}</span>
+              <span className={styles.cityName}>{city}</span>
             </div>
             <button className={styles.shippingButton}>Pick it up</button>
           </div>
@@ -80,7 +84,7 @@ class Shipping extends React.Component {
             <div className={styles.insidehippingHeaders}>
               <div className={styles.shippingGreenText}>
                 Same Day Delivery to{" "}
-                <span className={styles.zipcode}>{this.state.zipcode}</span>
+                <span className={styles.zipcode}>{zipcode}</span>
               </div>
               <div
                 className={styles.changeZipCode}
@@ -90,7 +94,7 @@ class Shipping extends React.Component {
               </div>
               <form
                 onSubmit={this.handleSubmit}
-                style={this.state.showMyComponent ? {} : { display: "none" }}
+                style={showMyComponent ? {} : { display: "none" }}
               >
                 <input type="text" ref={this.zipCodeInput} />
                 <input type="submit" value="Submit" />
@@ -104,9 +108,9 @@ class Shipping extends React.Component {
             <span>Learn more</span>
           </div>
         </div>
-        {/* <div className={styles.giftButton}>
+        <div className={styles.giftButton}>
           <div className={styles.giftText}>Add to registry</div>
-        </div> */}
+        </div>
       </div>
     );
   }
