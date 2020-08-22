@@ -46,9 +46,14 @@ class Shipping extends React.Component {
   }
 
   //submit handler to close form and change zipcode
+  //Use of regex to prevent invalid zip code submissions
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({ zipcode: this.zipCodeInput.current.value });
+    let userZipCode = this.zipCodeInput.current.value;
+    let zipCodeRule = /^\d{5}$/;
+    if (zipCodeRule.test(userZipCode)) {
+      this.setState({ zipcode: this.zipCodeInput.current.value });
+    }
     this.setState({ showMyComponent: !this.state.showMyComponent });
   }
 
