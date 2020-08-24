@@ -1,6 +1,6 @@
-import React from "react";
-import axios from "axios";
-import styles from "../style.css";
+import React from 'react';
+import axios from 'axios';
+import styles from '../style.css';
 
 class Price extends React.Component {
   constructor(props) {
@@ -13,24 +13,23 @@ class Price extends React.Component {
     this.quantityClickHander = this.quantityClickHandler.bind(this);
   }
 
+  // On mount, set state of price
   componentDidMount() {
     this.getPrice();
   }
 
-  //when productId changes, get request for price
+  // when productId changes, get request for price and update
   componentDidUpdate(prevProps) {
     if (this.props.productId !== prevProps.productId) {
       this.getPrice();
     }
-  }
+  };
 
-  quantityClickHandler(num) {
-    this.setState({ quantity: num });
-  }
-
+  // get request for price to backend and set state for price
   getPrice() {
+    const { productId } = this.props;
     axios
-      .get(`/product/price/${this.props.productId}`)
+      .get(`/product/price/${productId}`)
       .then((response) => {
         this.setState({ price: response.data.price });
       })
@@ -39,21 +38,30 @@ class Price extends React.Component {
       });
   }
 
+  // sets state for drop down menu click
+  quantityClickHandler(num) {
+    this.setState({ quantity: num });
+  }
+
+  // Will render Price and Quantity drop down menu
   render() {
+    const { price, quantity } = this.state;
     return (
       <div className={styles.priceContainer}>
-        <div className={styles.priceNumber}>{`$${this.state.price.toFixed(
-          2
-        )}`}</div>
+        <div className={styles.priceNumber}>
+          {`$${price.toFixed(2)}`}
+        </div>
         <div>Quantity</div>
         <div className={styles.quantityDropdown}>
           <select className={styles.quantityDropbtn}>
+            {/* this option is to display the quantity number */}
             <option className={styles.quantityOption}>
-              {`${this.state.quantity}`}
+              {`${quantity}`}
             </option>
           </select>
+          {/* this is the drop down menu that uses clickhandler */}
           <div className={styles.quantityDropdownContent}>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num, i) => { //Look into Array fill/range
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num, i) => {
               return (
                 <a
                   key={i}
@@ -61,6 +69,7 @@ class Price extends React.Component {
                     this.quantityClickHandler(num);
                   }}
                 >
+                  {/* this is a displayed number */}
                   {num}
                 </a>
               );
