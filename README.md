@@ -1,13 +1,15 @@
-# AboutThisItem
+# Product View Pricing Shipping
 
-This component renders a specific description of the selected item, product specifications of the selected item, highlights of the selected item, shipping and returns information of the selected item, and a questions & answers section where the user can see previously asked question(s), post an answer, and ask their own question about the item.
+This component renders images of the searched or selected item, the pricing of individual items, and a form for users to input thier zip code to get shipping to their city. Users can click on the select an image from the sidebar to see a different view of item and can hover over the item enlarge the photo. 
 
 Here is a list of things that I did with this component:
 * Collaborated with four other software engineers in a remote, Agile environment, making use of a Trello board to track tickets and tasks
+* Created user interface with React and CSS
+* Utilized external API to get city by zip code for shipping component
 * Built a proxy server and deployed the full stack app to an AWS EC2 instance
 
 
-# AboutThisItem is a microservice component of:
+# Product View Pricing Shipping is a microservice component of:
 
 ## Mock Target
 Mock Target is a web application designed to mimic the functionality and looks of the Target item detail page.
