@@ -19,6 +19,9 @@ This Application was built by a team of five Full Stack Software Engineers from 
 ## Overall Page/Product View Demo
 ![Target1](https://github.com/RetailClone/AboutThisItem/blob/master/Overall.gif)
 
+## Product View and Shipping Demo
+![Target1](https://github.com/RetailClone/Individual_Item_Pricing_Shipping/blob/master/Individual_item_pricing.gif)
+
 ## Searchbar Demo
 ![Target2](https://github.com/RetailClone/AboutThisItem/blob/master/searchbar.gif)
 
