@@ -22,21 +22,6 @@ This Application was built by a team of five Full Stack Software Engineers from 
 ## Product View and Shipping Demo
 ![Target1](https://github.com/RetailClone/Individual_Item_Pricing_Shipping/blob/master/Individual_item_pricing.gif)
 
-## Searchbar Demo
-![Target2](https://github.com/RetailClone/AboutThisItem/blob/master/searchbar.gif)
-
-## About This Item Demo
-![Target3](https://github.com/RetailClone/AboutThisItem/blob/master/AboutThisItem.gif)
-
-## Frequently Bought Together Demo
-![Target4](https://github.com/RetailClone/AboutThisItem/blob/master/FreqBought.gif)
-
-## Recommended Items Demo
-![Target5](https://github.com/RetailClone/AboutThisItem/blob/master/recommended.gif)
-
-## Reviews Demo
-![Target5](https://github.com/RetailClone/AboutThisItem/blob/master/reviews.gif)
-
 ## Dev Team
 
   * [Mariella Arias]: Frequently Bought Together and Recommended Items
